@@ -1,0 +1,40 @@
+.HomeSectionParent {
+  background: rgb(31, 2, 59);
+  background: linear-gradient(
+    35deg,
+    rgb(26, 3, 48) 7%,
+    rgba(14, 12, 9, 1) 75%,
+    rgba(97, 57, 0, 1) 100%
+  );
+  font-family: "Work Sans", sans-serif;
+}
+
+.HomeSection {
+  max-width: 80vw;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HomeHeadingSection,
+.HomeImgSliderSection {
+  max-width: 50%;
+}
+.HomeImgSliderSection {
+  width: 100%;
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HomeHeadingMain{
+    font-size: 2.5rem;
+}
+.HomeHeadingMainGradient {
+  background: -webkit-linear-gradient(right, #eb8f1e, #d066d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
