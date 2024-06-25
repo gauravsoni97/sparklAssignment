@@ -13,7 +13,7 @@ const TextEffect = () => {
       const scrollDistance = window.scrollY;
       const updatedSpans = initialSpans.map((span, index) => ({
         ...span,
-        active: scrollDistance  >= index * 2.7
+        active: scrollDistance  >= index * 2.75
       }));
       setSpans(updatedSpans);
     };

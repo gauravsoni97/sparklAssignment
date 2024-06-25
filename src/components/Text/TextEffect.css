@@ -4,9 +4,13 @@
   font-family: "Lora", serif;
 }
 
-.TextEffectHeading{
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+.TextEffectHeading {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .text {
@@ -17,5 +21,3 @@
 .active {
   color: white;
 }
-
-
