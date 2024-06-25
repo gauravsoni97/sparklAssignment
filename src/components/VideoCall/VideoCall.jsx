@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./VideoCall.css";
 
 const VideoCall = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(true);
+  };
+
   return (
-    <div className="VideoCallSection">
+    <div
+      className={`VideoCallSection ${isClicked ? "Clicked" : ""}`}
+      onClick={handleClick}
+    >
       <div className="VideoCallBox">
         <div className="VideoCallHeader">
           <h3 className="logo"> Sparkl</h3>
@@ -57,12 +66,32 @@ const VideoCall = () => {
           </span>
         </div>
         <div className="VideoCallMainScreen">
-          <div className="TeacherImgBox"></div>
-          <div className="StudentImgBox">
-            <div className="StudentCard"></div>
-            <div className="StudentCard"></div>
-            <div className="StudentCard"></div>
-            <div className="StudentCard"></div>
+          <div
+            className={`TeacherImgBox ${
+              isClicked ? "AfterStartTeacherImg" : ""
+            }`}
+          ></div>
+          <div className={`StudentImgBox`}>
+            <div
+              className={`StudentCard ${
+                isClicked ? "AfterStartStudentImg" : ""
+              }`}
+            ></div>
+            <div
+              className={`StudentCard ${
+                isClicked ? "AfterStartStudentImg" : ""
+              }`}
+            ></div>
+            <div
+              className={`StudentCard ${
+                isClicked ? "AfterStartStudentImg" : ""
+              }`}
+            ></div>
+            <div
+              className={`StudentCard ${
+                isClicked ? "AfterStartStudentImg" : ""
+              }`}
+            ></div>
           </div>
         </div>
       </div>
