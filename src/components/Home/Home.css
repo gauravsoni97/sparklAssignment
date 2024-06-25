@@ -30,11 +30,69 @@
   align-items: center;
   justify-content: center;
 }
-.HomeHeadingMain{
-    font-size: 2.5rem;
+.HomeHeadingMain {
+  font-size: 2.5rem;
 }
 .HomeHeadingMainGradient {
   background: -webkit-linear-gradient(right, #eb8f1e, #d066d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.whiteDyanmicHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.shiftTextBox {
+  color: white;
+  padding: 0.4rem 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 3.5rem;
+  overflow: hidden;
+  width: 7ch;
+  background: -webkit-linear-gradient(right, #eb8f1e, #d066d4);
+  animation: shiftBoxWidth 7s infinite; /* Animate width change */
+  transition: 3s ease-in-out; /* Smooth transition */
+}
+
+.shiftText {
+  animation: shiftWord 7s infinite;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  width: max-content;
+}
+
+@keyframes shiftWord {
+  0% {
+    transform: translateY(0%);
+  }
+
+  25% {
+    transform: translateY(-115%);
+  }
+
+  50% {
+    transform: translateY(-215%);
+  }
+
+  75% {
+    transform: translateY(-315%);
+  }
+}
+
+@keyframes shiftBoxWidth {
+  0% {
+    width: 7ch;
+  }
+
+  100% {
+    width: max-content; /* Change to fixed width midway */
+  }
 }

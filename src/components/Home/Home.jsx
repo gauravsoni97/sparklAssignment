@@ -7,8 +7,19 @@ const Home = () => {
       <div className="HomeSection">
         <div className="HomeHeadingSection">
           <h1 className="HomeHeadingMain">
-            <span className="HomeHeadingMainGradient">Gather Feedback with AI</span> <br /> From Your{" "}
-            <span>Clients</span>{" "}
+            <span className="HomeHeadingMainGradient">
+              Gather Feedback with AI
+            </span>
+            <br />
+            <div className="whiteDyanmicHeading">
+              <div>From Your</div>
+              <div className="shiftTextBox">
+                <span className="shiftText">Clients</span> 
+                <span className="shiftText">People</span> 
+                <span className="shiftText">Customers</span> 
+                <span className="shiftText">Teammates</span> 
+              </div>
+            </div>
           </h1>
 
           <p className="homePagePara">
