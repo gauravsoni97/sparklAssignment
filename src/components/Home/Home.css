@@ -23,13 +23,7 @@
 .HomeImgSliderSection {
   max-width: 50%;
 }
-.HomeImgSliderSection {
-  width: 100%;
-  background-color: rebeccapurple;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .HomeHeadingMain {
   font-size: 2.5rem;
 }
@@ -129,4 +123,94 @@
   gap: 0.5rem;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+}
+
+/* HOME RIGHT SIDE  */
+
+.HomeImgSliderSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+
+.sliderImageContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 27vw;
+  height: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem;
+}
+
+.sliderTextBoxArea {
+  position: absolute;
+  bottom: 0;
+  right: 0rem;
+  overflow: hidden;
+  background: rgb(4,0,8);
+  background: linear-gradient(0deg, rgba(4,0,8,0.9240546218487395) 15%, rgba(31,23,10,0.05) 100%);
+  border-radius: 1rem;
+}
+
+.ChatBox {
+  background-color: black;
+  color: white;
+  max-width: 80%;
+  margin-left: auto;
+  margin-bottom: 0.3rem;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  position: relative;
+  bottom: -70vh; /* Start position off-screen */
+  right: 0.3rem;
+  animation: animatechatBox 3s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+
+@keyframes animatechatBox {
+  0% {
+    bottom: -36vh; /* Mid-point */
+  }
+  50% {
+    bottom: -18vh; /* Near top */
+  }
+  100% {
+    bottom: 0vh; /* Top of the screen */
+  }
+}
+
+.chatImgName {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.ChatAvatar img {
+  width: 20px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.CharName h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.CharName p {
+  font-size: 0.7rem;
+}
+
+.ChatParagraph {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
 }

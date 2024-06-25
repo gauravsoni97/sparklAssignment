@@ -1,7 +1,68 @@
-import React from "react";
-import sliderImg from "../../assets/homeslider.jpg";
+import React, { useEffect, useState } from "react";
+import img1 from "../../assets/homeslider.jpg";
+import img2 from "../../assets/homeslider2.jpg";
+import userimg from "../../assets/user.jpg";
 import "./Home.css";
+
+import { Fade, Zoom } from "@mui/material";
+
+const sliderImages = [img1, img2];
+
 const Home = () => {
+  const [index, setIndex] = useState(0);
+  console.log(index);
+
+  const chatMessages1 = [
+    {
+      name: "Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+    {
+      name: "Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+    {
+      name: "Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+  ];
+  const chatMessages2 = [
+    {
+      name: " 2nd Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+    {
+      name: "Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+    {
+      name: "Perspective AI",
+      role: "on behalf of Elon",
+      message:
+        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) =>
+        prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="HomeSectionParent">
       <div className="HomeSection">
@@ -41,8 +102,57 @@ const Home = () => {
           </div>
         </div>
         <div className="HomeImgSliderSection">
-          <div className="imgSliderArea">
-            <img style={{ width: "200px" }} src={sliderImg} alt="" />
+          <div className="slider">
+            {sliderImages.map((image, idx) => (
+              <Fade in={index === idx} key={idx} timeout={1000}>
+                <div
+                  key={idx}
+                  className="sliderImageContainer"
+                  style={{ backgroundImage: `url(${image})` }}
+                >
+                  {index === 0 && (
+                    <div className="sliderTextBoxArea">
+                      {chatMessages1.map((message, chatIdx) => (
+                      <Fade in={index === idx} key={chatIdx} timeout={1000}>
+                          <div key={chatIdx} className="ChatBox">
+                            <div className="chatImgName">
+                              <div className="ChatAvatar">
+                                <img src={userimg} alt="User Avatar" />
+                              </div>
+                              <div className="CharName">
+                                <h3>{message.name}</h3>
+                                <p>{message.role}</p>
+                              </div>
+                            </div>
+                            <p className="ChatParagraph">{message.message}</p>
+                          </div>
+                        </Fade>
+                      ))}
+                    </div>
+                  )}
+                  {index === 1 && (
+                    <div className="sliderTextBoxArea">
+                      {chatMessages2.map((message, chatIdx) => (
+                        <Fade in={message} timeout={1000}>
+                          <div key={chatIdx} className="ChatBox">
+                            <div className="chatImgName">
+                              <div className="ChatAvatar">
+                                <img src={userimg} alt="User Avatar" />
+                              </div>
+                              <div className="CharName">
+                                <h3>{message.name}</h3>
+                                <p>{message.role}</p>
+                              </div>
+                            </div>
+                            <p className="ChatParagraph">{message.message}</p>
+                          </div>
+                        </Fade>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </Fade>
+            ))}
           </div>
         </div>
       </div>
