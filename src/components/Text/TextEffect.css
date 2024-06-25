@@ -6,11 +6,11 @@
 
 .TextEffectHeading {
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
   letter-spacing: 2px;
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
+  margin: 10rem 0 3rem;
 }
 
 .text {
