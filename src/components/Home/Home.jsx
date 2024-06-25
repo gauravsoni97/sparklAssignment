@@ -16,7 +16,7 @@ const Home = () => {
               <div className="shiftTextBox">
                 <span className="shiftText">Customers</span> 
                 <span className="shiftText">Teammates</span> 
-                <span className="shiftText">community</span> 
+                <span className="shiftText">Community</span> 
                 <span className="shiftText">Audiance</span> 
               </div>
             </div>
