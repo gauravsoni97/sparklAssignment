@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./VideoCall.css";
 
 const VideoCall = () => {
   return (
-    <div style={{minHeight:"100vh"}}>VideoCall</div>
-  )
-}
+    <div className="VideoCallSection">
+      <div className="VideoCallBox"></div>
+    </div>
+  );
+};
 
-export default VideoCall
+export default VideoCall;

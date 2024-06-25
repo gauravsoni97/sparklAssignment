@@ -1,0 +1,12 @@
+.VideoCallSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.VideoCallBox {
+  background-color: rgb(255, 253, 249);
+  width: 80vw;
+  height: 80vh;
+}
