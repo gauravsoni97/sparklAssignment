@@ -14,10 +14,10 @@ const Home = () => {
             <div className="whiteDyanmicHeading">
               <div>From Your</div>
               <div className="shiftTextBox">
-                <span className="shiftText">Clients</span> 
-                <span className="shiftText">People</span> 
                 <span className="shiftText">Customers</span> 
                 <span className="shiftText">Teammates</span> 
+                <span className="shiftText">community</span> 
+                <span className="shiftText">Audiance</span> 
               </div>
             </div>
           </h1>

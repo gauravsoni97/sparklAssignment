@@ -56,14 +56,13 @@
   flex-direction: column;
   height: 3.5rem;
   overflow: hidden;
-  width: 7ch;
+  width: max-content;
   background: -webkit-linear-gradient(right, #eb8f1e, #d066d4);
-  animation: shiftBoxWidth 7s infinite; /* Animate width change */
-  transition: 3s ease-in-out; /* Smooth transition */
+  transition: width 3s ease-in-out !important; /* Smooth transition on width */
 }
 
 .shiftText {
-  animation: shiftWord 7s infinite;
+  animation: shiftWord 7s infinite ;
   padding: 0.4rem 1rem;
   border-radius: 1rem;
   width: max-content;
@@ -84,15 +83,5 @@
 
   75% {
     transform: translateY(-315%);
-  }
-}
-
-@keyframes shiftBoxWidth {
-  0% {
-    width: 7ch;
-  }
-
-  100% {
-    width: max-content; /* Change to fixed width midway */
   }
 }
