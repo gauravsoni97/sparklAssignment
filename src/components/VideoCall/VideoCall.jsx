@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoCall = () => {
   return (
-    <div>VideoCall</div>
+    <div style={{minHeight:"100vh"}}>VideoCall</div>
   )
 }
 
