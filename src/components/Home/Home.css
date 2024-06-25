@@ -158,8 +158,12 @@
   bottom: 0;
   right: 0rem;
   overflow: hidden;
-  background: rgb(4,0,8);
-  background: linear-gradient(0deg, rgba(4,0,8,0.9240546218487395) 15%, rgba(31,23,10,0.05) 100%);
+  background: rgb(4, 0, 8);
+  background: linear-gradient(
+    0deg,
+    rgba(4, 0, 8, 0.9240546218487395) 15%,
+    rgba(31, 23, 10, 0.05) 100%
+  );
   border-radius: 1rem;
 }
 
@@ -172,16 +176,19 @@
   border-radius: 0.8rem;
   padding: 1rem;
   position: relative;
-  bottom: -70vh; /* Start position off-screen */
+  bottom: -72vh; /* Start position off-screen */
   right: 0.3rem;
   animation: animatechatBox 3s cubic-bezier(0.5, 0, 0.5, 1) forwards;
 }
 
 @keyframes animatechatBox {
   0% {
-    bottom: -36vh; /* Mid-point */
+    bottom: -54vh; /* Mid-point */
   }
-  50% {
+  30% {
+    bottom: -36vh; /* Near top */
+  }
+  60% {
     bottom: -18vh; /* Near top */
   }
   100% {
