@@ -106,7 +106,7 @@ const VideoCall = () => {
           </span>
         </div>
         {isVideoStarted && (
-          <Fade in={isVideoStarted} timeout={1000}>
+          <Fade in={isVideoStarted} timeout={100}>
             <div className="VideoCallMainScreen">
               <div
                 onClick={handleClick}
