@@ -8,54 +8,53 @@ import "./Home.css";
 
 import { Fade, Zoom } from "@mui/material";
 
+const chatMessages1 = [
+  {
+    userimg: ai,
+    name: "Perspective AI",
+    role: "on behalf of Elon",
+    message:
+      "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+  },
+  {
+    userimg: userimg,
+    name: "Mike",
+    role: "",
+    message: "The setup was easy but the alignment was tricky",
+  },
+  {
+    userimg: ai,
+    name: "Perspective AI",
+    role: "on behalf of Elon",
+    message: "I see! How did you manage to align it?",
+  },
+];
+const chatMessages2 = [
+  {
+    userimg: ai,
+    name: "Perspective AI",
+    role: "on behalf of Lex",
+    message:
+      "Hey 👋 Kristin! What was challenging about the Starlink installation process?",
+  },
+  {
+    userimg: girlimg,
+    name: "Kristin",
+    role: "",
+    message: "The setup was easy but the alignment was tricky",
+  },
+  {
+    userimg: ai,
+    name: "Perspective AI",
+    role: "on behalf of Lex",
+    message: "I see! How did you manage to align it?",
+  },
+];
+
 const sliderImages = [img1, img2];
 
 const Home = () => {
   const [index, setIndex] = useState(0);
-  console.log(index);
-
-  const chatMessages1 = [
-    {
-      userimg: ai,
-      name: "Perspective AI",
-      role: "on behalf of Elon",
-      message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
-    },
-    {
-      userimg: userimg,
-      name: "Mike",
-      role: "",
-      message: "The setup was easy but the alignment was tricky",
-    },
-    {
-      userimg: ai,
-      name: "Perspective AI",
-      role: "on behalf of Elon",
-      message: "I see! How did you manage to align it?",
-    },
-  ];
-  const chatMessages2 = [
-    {
-      userimg: ai,
-      name: "Perspective AI",
-      role: "on behalf of Lex",
-      message:
-        "Hey 👋 Kristin! What was challenging about the Starlink installation process?",
-    },
-    {
-      userimg: girlimg,
-      name: "Kristin",
-      role: "",
-      message: "The setup was easy but the alignment was tricky",
-    },
-    {
-      userimg: ai,
-      name: "Perspective AI",
-      role: "on behalf of Lex",
-      message: "I see! How did you manage to align it?",
-    },
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {

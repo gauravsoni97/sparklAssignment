@@ -180,8 +180,8 @@
   position: relative;
   bottom: -50vh;
   right: 0.3rem;
-  animation: animatechatBox 4s ease forwards;
-  animation-delay: .3s;
+  animation: animatechatBox 4s ease infinite;
+  animation-delay: 0.3s;
 }
 
 @keyframes animatechatBox {
