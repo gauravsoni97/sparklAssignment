@@ -180,7 +180,7 @@
   position: relative;
   bottom: -50vh;
   right: 0.3rem;
-  animation: animatechatBox 3s ease forwards;
+  animation: animatechatBox 4s ease forwards;
   animation-delay: .3s;
 }
 
