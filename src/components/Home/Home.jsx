@@ -58,7 +58,7 @@ const Home = () => {
       setIndex((prevIndex) =>
         prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
