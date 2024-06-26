@@ -1,5 +1,3 @@
-
-
 .VideoCallSection {
   min-height: 100vh;
   display: flex;
@@ -7,11 +5,11 @@
   justify-content: center;
   font-family: "Work Sans", sans-serif;
 }
-.StopVideoCallSection{
+.StopVideoCallSection {
   display: none;
 }
 
-.StartVideoCallSection{
+.StartVideoCallSection {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.448);
@@ -21,7 +19,7 @@
   align-items: center;
   justify-content: center;
 }
-.StartVideoCallSection svg{
+.StartVideoCallSection svg {
   width: 5rem;
   height: 5rem;
   cursor: pointer;
@@ -31,6 +29,7 @@
   background-color: rgb(16, 11, 2);
   width: 70vw;
   height: 90vh;
+  max-height: 1200px;
   border-radius: 1rem;
   display: flex;
   align-items: flex-start;
@@ -39,7 +38,6 @@
   transition: 3s ease-in-out;
   overflow: hidden;
   position: relative;
-
 }
 .VideoCallHeader {
   position: absolute;
@@ -96,7 +94,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  transition: .8s all ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .AfterStartTeacherImg {
   position: absolute;
@@ -108,7 +106,8 @@
 
 .StudentCard {
   width: 15vw;
-  height: 160px;
+  height: 20vh;
+  max-height: 220px;
   border-radius: 1rem;
   border: 3px solid white;
   background-size: cover;
@@ -179,4 +178,217 @@
 
 .FixedIconYellow {
   background-color: #f8d505;
+}
+
+/* ====================================== Responsiveness ===================================== */
+
+@media screen and (width <= 1050px) {
+  .VideoCallBox {
+    width: 80vw;
+  }
+
+  .VideoCallMainScreen {
+    width: 75vw;
+    height: 62vh;
+  }
+  .AfterStartStudentImg {
+    width: 15vw;
+    height: 95px;
+  }
+  .AfterStartTeacherImg {
+    height: 14vh;
+  }
+}
+@media screen and (width <= 850px) {
+  .VideoCallBox {
+    width: 90vw;
+  }
+  .VideoCallHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+  }
+  .VideoCallHeader .Timer {
+    width: 50%;
+    line-height: 1.5rem;
+  }
+
+  .FixedIcons {
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .FixedIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .StudentImgBox {
+    flex-wrap: wrap;
+    width: 90vw;
+  }
+
+  .StartVideoCallSection svg {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+  .VideoCallMainScreen {
+    width: 88vw;
+    height: 62vh;
+  }
+  .VideoCallMainScreen {
+    width: 88vw;
+    height: 62vh;
+  }
+
+  .StudentCard {
+    width: 18vw;
+    height: 12vh;
+  }
+  .AfterStartStudentImg {
+    width: 15vw;
+    height: 95px;
+  }
+  .AfterStartTeacherImg {
+    height: 14vh;
+  }
+}
+
+@media screen and (width <= 550px) {
+  .VideoCallBox {
+    width: 95vw;
+  }
+  .VideoCallHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+  }
+  .VideoCallHeader .Timer {
+    width: 100%;
+    line-height: 1.5rem;
+  }
+
+  .FixedIcons {
+    right: 1.8rem;
+    gap: 0.5rem;
+  }
+
+  .FixedIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .StudentImgBox {
+    flex-wrap: wrap;
+    width: 90vw;
+  }
+
+  .StartVideoCallSection svg {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+  .VideoCallMainScreen {
+    width: 88vw;
+    height: calc(100% - 21vh);
+    margin-top: 5rem;
+  }
+
+  .StudentCard {
+    width: 18vw;
+    height: 12vh;
+  }
+  .AfterStartStudentImg {
+    width: 17vw;
+    height: 70px;
+  }
+  .AfterStartTeacherImg {
+    height: 12vh;
+    width: 25vw;
+    position: absolute;
+    top: 5.5rem;
+    right: 1.5rem;
+  }
+}
+
+
+@media screen and (width <= 400px) {
+  .VideoCallBox {
+    width: 95vw;
+  }
+  .VideoCallHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+  }
+  .VideoCallHeader .Timer {
+    width: 100%;
+    line-height: 1.5rem;
+  }
+
+  .FixedIcons {
+    right: 1.8rem;
+    gap: 0.5rem;
+  }
+
+  .FixedIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .StudentImgBox {
+    flex-wrap: wrap;
+    width: 90vw;
+  }
+
+  .StartVideoCallSection svg {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+  .VideoCallMainScreen {
+    width: 88vw;
+    height: calc(100% - 28vh);
+    margin-top: 5rem;
+  }
+
+  .StudentCard {
+    width: 18vw;
+    height: 12vh;
+  }
+  .AfterStartStudentImg {
+    width: 17vw;
+    height: 70px;
+  }
+  .AfterStartTeacherImg {
+    height: 12vh;
+    width: 25vw;
+    position: absolute;
+    top: 5.5rem;
+    right: 1.5rem;
+  }
+}
+
+
+@media screen and (width <= 350px) {
+  .FixedIcons {
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .VideoCallHeader .Timer {
+    font-size: 0.7rem;
+  }
+  .VideoCallHeader .Timer span {
+    font-size: 0.7rem;
+  }
+
+  .VideoCallMainScreen {
+    margin-top: 4.5rem;
+  }
+  .AfterStartTeacherImg {
+    top: 5rem;
+    right: 1.2rem;
+  }
 }

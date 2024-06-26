@@ -107,12 +107,12 @@ const VideoCall = () => {
         </div>
         {isVideoStarted && (
           <div className="VideoCallMainScreen">
-            <div
-              onClick={handleClick}
-              className={`TeacherImgBox ${
-                isClicked ? "AfterStartTeacherImg" : ""
-              }`}
-            ></div>
+              <div
+                onClick={handleClick}
+                className={`TeacherImgBox ${
+                  isClicked ? "AfterStartTeacherImg" : ""
+                }`}
+              ></div>
 
             <div className={`StudentImgBox`}>
               <div
