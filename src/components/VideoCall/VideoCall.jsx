@@ -106,39 +106,46 @@ const VideoCall = () => {
           </span>
         </div>
         {isVideoStarted && (
-          <Fade in={isVideoStarted} timeout={100}>
-            <div className="VideoCallMainScreen">
+          <div
+            className="VideoCallMainScreen"
+            style={
+              isVideoStarted
+                ? { visibility: "visible" }
+                : { visibility: "hidden" }
+            }
+          >
+            <Fade in={true} timeout={300}>
               <div
                 onClick={handleClick}
                 className={`TeacherImgBox ${
                   isClicked ? "AfterStartTeacherImg" : ""
                 }`}
               ></div>
+            </Fade>
 
-              <div className={`StudentImgBox`}>
-                <div
-                  className={`StudentCard ${
-                    isClicked ? "AfterStartStudentImg" : ""
-                  }`}
-                ></div>
-                <div
-                  className={`StudentCard ${
-                    isClicked ? "AfterStartStudentImg" : ""
-                  }`}
-                ></div>
-                <div
-                  className={`StudentCard ${
-                    isClicked ? "AfterStartStudentImg" : ""
-                  }`}
-                ></div>
-                <div
-                  className={`StudentCard ${
-                    isClicked ? "AfterStartStudentImg" : ""
-                  }`}
-                ></div>
-              </div>
+            <div className={`StudentImgBox`}>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
             </div>
-          </Fade>
+          </div>
         )}
       </div>
     </div>
