@@ -107,16 +107,14 @@ const Home = () => {
         <div className="HomeImgSliderSection">
           <div className="slider">
             {sliderImages.map((image, idx) => (
-              <Fade in={index === idx} timeout={500}>
+              <Fade in={index === idx} key={idx} timeout={500}>
                 <div
-                  key={idx}
                   className="sliderImageContainer"
                   style={{ backgroundImage: `url(${image})` }}
                 >
                   {index === 0 && (
                     <div className="sliderTextBoxArea">
                       {chatMessages1.map((message, chatIdx) => (
-                        <Fade in={index === idx} key={chatIdx} timeout={1000}>
                           <div key={chatIdx} className="ChatBox">
                             <div className="chatImgName">
                               <div className="ChatAvatar">
@@ -141,14 +139,12 @@ const Home = () => {
                             </div>
                             <p className="ChatParagraph">{message.message}</p>
                           </div>
-                        </Fade>
                       ))}
                     </div>
                   )}
                   {index === 1 && (
                     <div className="sliderTextBoxArea">
                       {chatMessages2.map((message, chatIdx) => (
-                        <Fade in={message} timeout={1000}>
                           <div key={chatIdx} className="ChatBox">
                             <div className="chatImgName">
                               <div className="ChatAvatar">
@@ -173,7 +169,6 @@ const Home = () => {
                             </div>
                             <p className="ChatParagraph">{message.message}</p>
                           </div>
-                        </Fade>
                       ))}
                     </div>
                   )}
