@@ -14,42 +14,48 @@ const Home = () => {
 
   const chatMessages1 = [
     {
+      userimg: userimg,
       name: "Perspective AI",
       role: "on behalf of Elon",
       message:
         "Hey 👋 Mike! What was challenging about the Starlink installation process?",
     },
     {
-      name: "Perspective AI",
-      role: "on behalf of Elon",
+      userimg: userimg,
+      name: "Mike",
+      role: "",
       message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+        "The setup was easy but the alignment was tricky",
     },
     {
+      userimg: userimg,
       name: "Perspective AI",
       role: "on behalf of Elon",
       message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+        "I see! How did you manage to align it?",
     },
   ];
   const chatMessages2 = [
     {
+      userimg: userimg,
       name: " 2nd Perspective AI",
-      role: "on behalf of Elon",
+      role: "on behalf of Lex",
       message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+        "Hey 👋 Kristin! Do you usually listen 3 hours podcast episoded, or catch the highlight on youtube?",
     },
     {
-      name: "Perspective AI",
-      role: "on behalf of Elon",
+      userimg: userimg,
+      name: "Kristin",
+      role: "",
       message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+        "I usually listent to the full episodes. I love the in-depth conversation.",
     },
     {
+      userimg: userimg,
       name: "Perspective AI",
-      role: "on behalf of Elon",
+      role: "on behalf of Lex",
       message:
-        "Hey 👋 Mike! What was challenging about the Starlink installation process?",
+        "Thats awesome, Whats your favrourite episode so far?",
     },
   ];
 
@@ -113,11 +119,11 @@ const Home = () => {
                   {index === 0 && (
                     <div className="sliderTextBoxArea">
                       {chatMessages1.map((message, chatIdx) => (
-                      <Fade in={index === idx} key={chatIdx} timeout={1000}>
+                        <Fade in={index === idx} key={chatIdx} timeout={1000}>
                           <div key={chatIdx} className="ChatBox">
                             <div className="chatImgName">
                               <div className="ChatAvatar">
-                                <img src={userimg} alt="User Avatar" />
+                                <img src={message.userimg} alt="User Avatar" />
                               </div>
                               <div className="CharName">
                                 <h3>{message.name}</h3>
