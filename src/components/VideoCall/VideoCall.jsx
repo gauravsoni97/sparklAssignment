@@ -106,7 +106,8 @@ const VideoCall = () => {
           </span>
         </div>
         {isVideoStarted && (
-          <div className="VideoCallMainScreen">
+          <Fade in={isVideoStarted} timeout={1000}>
+            <div className="VideoCallMainScreen">
               <div
                 onClick={handleClick}
                 className={`TeacherImgBox ${
@@ -114,29 +115,30 @@ const VideoCall = () => {
                 }`}
               ></div>
 
-            <div className={`StudentImgBox`}>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
+              <div className={`StudentImgBox`}>
+                <div
+                  className={`StudentCard ${
+                    isClicked ? "AfterStartStudentImg" : ""
+                  }`}
+                ></div>
+                <div
+                  className={`StudentCard ${
+                    isClicked ? "AfterStartStudentImg" : ""
+                  }`}
+                ></div>
+                <div
+                  className={`StudentCard ${
+                    isClicked ? "AfterStartStudentImg" : ""
+                  }`}
+                ></div>
+                <div
+                  className={`StudentCard ${
+                    isClicked ? "AfterStartStudentImg" : ""
+                  }`}
+                ></div>
+              </div>
             </div>
-          </div>
+          </Fade>
         )}
       </div>
     </div>
