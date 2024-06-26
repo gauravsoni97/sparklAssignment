@@ -13,7 +13,6 @@ const VideoCall = () => {
   };
 
   useEffect(() => {
-    
     const countdownInterval = setInterval(() => {
       if (seconds > 0) {
         setSeconds(seconds - 1);
@@ -52,9 +51,13 @@ const VideoCall = () => {
           <h3 className="logo">Sparkl</h3>
           <div className="Timer">
             Solving linear equation in one variable{" "}
-            <span>
-              {minutes}:{formattedSeconds}
-            </span>{" "}
+            {!isVideoStarted ? (
+              <span>50:00</span>
+            ) : (
+              <span>
+                {minutes}:{formattedSeconds}
+              </span>
+            )}
           </div>
         </div>
 
