@@ -180,7 +180,8 @@
   position: relative;
   bottom: -50vh;
   right: 0.3rem;
-  animation: animatechatBox 3s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+  animation: animatechatBox 3s ease forwards;
+  animation-delay: .3s;
 }
 
 @keyframes animatechatBox {
