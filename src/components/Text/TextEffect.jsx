@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import "./TextEffect.css"; // Import your CSS file for styling
+import "./TextEffect.css";
 
 const TextEffect = () => {
-  const [spans, setSpans] = useState([]);
+  const [words, setWords] = useState([]);
 
   useEffect(() => {
-    const textContent = longText.split(""); // Split longText into array of characters
-    const initialSpans = textContent.map((char) => ({ char, active: false }));
-    setSpans(initialSpans);
+    const textContent = longText.split(" ");
+    const initialWords = textContent.map((word) => ({ word, active: false }));
+    setWords(initialWords);
 
     const handleScroll = () => {
       const scrollDistance = window.scrollY;
-      const updatedSpans = initialSpans.map((span, index) => ({
-        ...span,
-        active: scrollDistance >= index * 2.95,
+      const updatedWords = initialWords.map((word, index) => ({
+        ...word,
+        active: scrollDistance >= index * 20,
       }));
-      setSpans(updatedSpans);
+      setWords(updatedWords);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,7 +23,7 @@ const TextEffect = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures effect runs only once on mount
+  }, []);
 
   const longText = `The aim of Sparkl is to provide Best Learning and Lorem ipsum dolor sit amet consectetur adipisicing elit. 
   Impedit quo laboriosam numquam molestiae accusantium incidunt odit ex inventore 
@@ -39,10 +39,11 @@ const TextEffect = () => {
     <div className="TextEffectSection">
       <h4 className="TextEffectHeading">Unlock your true potential</h4>
       <p className="text">
-        {spans.map((span, index) => (
-          <span key={index} className={span.active ? "active" : ""}>
-            {span.char}
-          </span>
+        {words.map((word, index) => (
+          <React.Fragment key={index}>
+            <span className={word.active ? "active" : ""}>{word.word}</span>
+            {index !== words.length - 1 && " "}
+          </React.Fragment>
         ))}
       </p>
     </div>
