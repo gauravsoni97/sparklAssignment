@@ -1,23 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./VideoCall.css";
+import { Fade, Grow } from "@mui/material";
 
 const VideoCall = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isVideoStarted, setIsVideoStarted] = useState(false);
+  const [minutes, setMinutes] = useState(50);
+  const [seconds, setSeconds] = useState(0);
 
   const handleClick = () => {
     setIsClicked(true);
   };
 
+  useEffect(() => {
+    
+    const countdownInterval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      }
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(countdownInterval);
+        } else {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        }
+      }
+    }, 1000);
+
+    // Cleanup function to clear interval on unmount
+    return () => clearInterval(countdownInterval);
+  }, [minutes, seconds]);
+
+  // Format the remaining time to display as MM:SS
+  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
   return (
-    <div
-      className={`VideoCallSection ${isClicked ? "Clicked" : ""}`}
-      onClick={handleClick}
-    >
+    <div className={`VideoCallSection ${isClicked ? "Clicked" : ""}`}>
       <div className="VideoCallBox">
+        <div
+          className={` ${
+            isVideoStarted ? "StopVideoCallSection" : "StartVideoCallSection"
+          }`}
+          onClick={() => setIsVideoStarted(true)}
+        >
+          <svg fill="#fdd300" viewBox="0 0 16 16" height="1em" width="1em">
+            <path d="M16 8A8 8 0 110 8a8 8 0 0116 0zM6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z" />
+          </svg>
+        </div>
         <div className="VideoCallHeader">
-          <h3 className="logo"> Sparkl</h3>
+          <h3 className="logo">Sparkl</h3>
           <div className="Timer">
-            Solving linear equation in one variable <span>47:21</span>{" "}
+            Solving linear equation in one variable{" "}
+            <span>
+              {minutes}:{formattedSeconds}
+            </span>{" "}
           </div>
         </div>
 
@@ -65,35 +102,39 @@ const VideoCall = () => {
             </svg>
           </span>
         </div>
-        <div className="VideoCallMainScreen">
-          <div
-            className={`TeacherImgBox ${
-              isClicked ? "AfterStartTeacherImg" : ""
-            }`}
-          ></div>
-          <div className={`StudentImgBox`}>
+        {isVideoStarted && (
+          <div className="VideoCallMainScreen">
             <div
-              className={`StudentCard ${
-                isClicked ? "AfterStartStudentImg" : ""
+              onClick={handleClick}
+              className={`TeacherImgBox ${
+                isClicked ? "AfterStartTeacherImg" : ""
               }`}
             ></div>
-            <div
-              className={`StudentCard ${
-                isClicked ? "AfterStartStudentImg" : ""
-              }`}
-            ></div>
-            <div
-              className={`StudentCard ${
-                isClicked ? "AfterStartStudentImg" : ""
-              }`}
-            ></div>
-            <div
-              className={`StudentCard ${
-                isClicked ? "AfterStartStudentImg" : ""
-              }`}
-            ></div>
+
+            <div className={`StudentImgBox`}>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+              <div
+                className={`StudentCard ${
+                  isClicked ? "AfterStartStudentImg" : ""
+                }`}
+              ></div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
