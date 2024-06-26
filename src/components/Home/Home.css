@@ -178,23 +178,20 @@
   border-radius: 0.8rem;
   padding: 1rem;
   position: relative;
-  bottom: -72vh; /* Start position off-screen */
+  bottom: -50vh;
   right: 0.3rem;
   animation: animatechatBox 3s cubic-bezier(0.5, 0, 0.5, 1) forwards;
 }
 
 @keyframes animatechatBox {
-  0% {
-    bottom: -54vh; /* Mid-point */
-  }
   30% {
-    bottom: -36vh; /* Near top */
+    bottom: -27.5vh;
   }
   60% {
-    bottom: -18vh; /* Near top */
+    bottom: -14vh;
   }
   100% {
-    bottom: 0vh; /* Top of the screen */
+    bottom: 0vh;
   }
 }
 

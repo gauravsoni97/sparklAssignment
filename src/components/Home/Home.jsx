@@ -41,20 +41,19 @@ const Home = () => {
       name: "Perspective AI",
       role: "on behalf of Lex",
       message:
-        "Hey 👋 Kristin! Do you usually listen 3 hours podcast episoded, or catch the highlight on youtube?",
+        "Hey 👋 Kristin! What was challenging about the Starlink installation process?",
     },
     {
       userimg: girlimg,
       name: "Kristin",
       role: "",
-      message:
-        "I usually listent to the full episodes. I love the in-depth conversation.",
+      message: "The setup was easy but the alignment was tricky",
     },
     {
       userimg: ai,
       name: "Perspective AI",
       role: "on behalf of Lex",
-      message: "Thats awesome, Whats your favrourite episode so far?",
+      message: "I see! How did you manage to align it?",
     },
   ];
 
@@ -63,7 +62,7 @@ const Home = () => {
       setIndex((prevIndex) =>
         prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -109,7 +108,7 @@ const Home = () => {
         <div className="HomeImgSliderSection">
           <div className="slider">
             {sliderImages.map((image, idx) => (
-              <Fade in={index === idx} key={idx} timeout={1000}>
+              <Fade in={index === idx} timeout={500}>
                 <div
                   key={idx}
                   className="sliderImageContainer"
