@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import img1 from "../../assets/homeslider.jpg";
 import img2 from "../../assets/homeslider2.jpg";
 import userimg from "../../assets/user.jpg";
+import girlimg from "../../assets/girlimg.jpg";
+import ai from "../../assets/ai.jpg";
 import "./Home.css";
 
 import { Fade, Zoom } from "@mui/material";
@@ -14,7 +16,7 @@ const Home = () => {
 
   const chatMessages1 = [
     {
-      userimg: userimg,
+      userimg: ai,
       name: "Perspective AI",
       role: "on behalf of Elon",
       message:
@@ -24,38 +26,35 @@ const Home = () => {
       userimg: userimg,
       name: "Mike",
       role: "",
-      message:
-        "The setup was easy but the alignment was tricky",
+      message: "The setup was easy but the alignment was tricky",
     },
     {
-      userimg: userimg,
+      userimg: ai,
       name: "Perspective AI",
       role: "on behalf of Elon",
-      message:
-        "I see! How did you manage to align it?",
+      message: "I see! How did you manage to align it?",
     },
   ];
   const chatMessages2 = [
     {
-      userimg: userimg,
-      name: " 2nd Perspective AI",
+      userimg: ai,
+      name: "Perspective AI",
       role: "on behalf of Lex",
       message:
         "Hey 👋 Kristin! Do you usually listen 3 hours podcast episoded, or catch the highlight on youtube?",
     },
     {
-      userimg: userimg,
+      userimg: girlimg,
       name: "Kristin",
       role: "",
       message:
         "I usually listent to the full episodes. I love the in-depth conversation.",
     },
     {
-      userimg: userimg,
+      userimg: ai,
       name: "Perspective AI",
       role: "on behalf of Lex",
-      message:
-        "Thats awesome, Whats your favrourite episode so far?",
+      message: "Thats awesome, Whats your favrourite episode so far?",
     },
   ];
 
@@ -124,6 +123,18 @@ const Home = () => {
                             <div className="chatImgName">
                               <div className="ChatAvatar">
                                 <img src={message.userimg} alt="User Avatar" />
+                                {message.role !== "" && (
+                                  <img
+                                    style={{
+                                      marginLeft: "-8px",
+                                      marginBottom: "-2px",
+                                      width: "12px",
+                                      height: "12px",
+                                    }}
+                                    src={girlimg}
+                                    alt="User Avatar"
+                                  />
+                                )}
                               </div>
                               <div className="CharName">
                                 <h3>{message.name}</h3>
@@ -143,7 +154,19 @@ const Home = () => {
                           <div key={chatIdx} className="ChatBox">
                             <div className="chatImgName">
                               <div className="ChatAvatar">
-                                <img src={userimg} alt="User Avatar" />
+                                <img src={message.userimg} alt="User Avatar" />
+                                {message.role !== "" && (
+                                  <img
+                                    style={{
+                                      marginLeft: "-8px",
+                                      marginBottom: "-2px",
+                                      width: "12px",
+                                      height: "12px",
+                                    }}
+                                    src={userimg}
+                                    alt="User Avatar"
+                                  />
+                                )}
                               </div>
                               <div className="CharName">
                                 <h3>{message.name}</h3>
