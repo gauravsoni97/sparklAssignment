@@ -35,7 +35,6 @@
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  transition: 3s ease-in-out;
   overflow: hidden;
   position: relative;
 }
@@ -94,7 +93,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  transition: 0.8s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .AfterStartTeacherImg {
   position: absolute;
@@ -105,7 +104,7 @@
 }
 
 .StudentCard {
-  width: 15vw;
+  width: 13vw;
   height: 20vh;
   max-height: 220px;
   border-radius: 1rem;
@@ -117,18 +116,20 @@
   bottom: -180px;
   animation-name: StuCard;
   animation-duration: 0.3s;
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
-  animation-play-state: play; 
-  transition: .3s ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: play;
+  transition: 0.4s ease;
 }
 
 @keyframes StuCard {
-  0% {
+  from {
     bottom: -180px;
+    transition: 0.4s ease;
   }
-  100% {
+  to {
     bottom: 0px;
+    transition: 0.4s ease;
   }
 }
 
@@ -312,6 +313,11 @@
   }
 }
 
+@media screen and (width <= 426px) {
+  .VideoCallMainScreen {
+    height: calc(100% - 29vh);
+  }
+}
 
 @media screen and (width <= 400px) {
   .VideoCallBox {
@@ -369,7 +375,6 @@
     right: 1.5rem;
   }
 }
-
 
 @media screen and (width <= 350px) {
   .FixedIcons {
