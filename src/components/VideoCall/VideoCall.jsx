@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./VideoCall.css";
-import { Fade, Grow } from "@mui/material";
 
 const VideoCall = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -114,14 +113,12 @@ const VideoCall = () => {
                 : { visibility: "hidden" }
             }
           >
-            <Fade in={true} timeout={300}>
               <div
                 onClick={handleClick}
                 className={`TeacherImgBox ${
                   isClicked ? "AfterStartTeacherImg" : ""
                 }`}
               ></div>
-            </Fade>
 
             <div className={`StudentImgBox`}>
               <div
