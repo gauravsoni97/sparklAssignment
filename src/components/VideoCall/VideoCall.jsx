@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import img1 from "../../assets/vc1.jpg";
+import img2 from "../../assets/vc2.jpg";
+import img3 from "../../assets/vc3.jpg";
+import img4 from "../../assets/vc4.jpg";
+import teacherImg from "../../assets/vcmain.jpg";
+import vcbg from "../../assets/vcbg.jpg";
+
 import "./VideoCall.css";
+import { Fade } from "@mui/material";
+const studentImgs = [img1, img2, img3, img4];
 
 const VideoCall = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [isVideoStarted, setIsVideoStarted] = useState(false);
   const [minutes, setMinutes] = useState(50);
   const [seconds, setSeconds] = useState(0);
+
+  const backgroundImageUrl = isClicked ? `url(${vcbg})` : "none";
 
   const handleClick = () => {
     setIsClicked(true);
@@ -107,40 +119,52 @@ const VideoCall = () => {
         {isVideoStarted && (
           <div
             className="VideoCallMainScreen"
-            style={
-              isVideoStarted
-                ? { visibility: "visible" }
-                : { visibility: "hidden" }
-            }
+            style={{ backgroundImage: backgroundImageUrl }}
           >
-              <div
-                onClick={handleClick}
-                className={`TeacherImgBox ${
-                  isClicked ? "AfterStartTeacherImg" : ""
-                }`}
-              ></div>
+            <div
+              className={`TeacherImgBox ${
+                isClicked ? "AfterStartTeacherImg" : ""
+              }`}
+              onClick={handleClick}
+            >
+              <img
+                src={teacherImg}
+                alt={"Teacher Img"}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius:".8rem",
+                }}
+              />
+            </div>
 
             <div className={`StudentImgBox`}>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
-              <div
-                className={`StudentCard ${
-                  isClicked ? "AfterStartStudentImg" : ""
-                }`}
-              ></div>
+              {studentImgs.map((imageUrl, index) => (
+                <div
+                  key={index}
+                  className={`StudentCard ${
+                    isClicked ? "AfterStartStudentImg" : ""
+                  }`}
+                >
+                  <img
+                    src={imageUrl}
+                    alt={`Student Image ${index}`}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "1rem",
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         )}
