@@ -61,7 +61,7 @@ const Home = () => {
       setIndex((prevIndex) =>
         prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -78,10 +78,10 @@ const Home = () => {
             <div className="whiteDyanmicHeading">
               <div>From Your</div>
               <div className="shiftTextBox">
+                <span className="shiftText">Audiance</span>
                 <span className="shiftText">Customers</span>
                 <span className="shiftText">Teammates</span>
                 <span className="shiftText">Community</span>
-                <span className="shiftText">Audiance</span>
               </div>
             </div>
           </h1>
@@ -110,65 +110,71 @@ const Home = () => {
               <Fade in={index === idx} key={idx} timeout={500}>
                 <div
                   className="sliderImageContainer"
-                  style={{ backgroundImage: `url(${image})` }}
+                  style={{
+                    backgroundImage: `linear-gradient(
+                    0deg,
+                    rgba(4, 0, 8, 0.7240546218487395) 0%,
+                    rgba(31, 23, 10, 0.0) 100%
+                  ), url(${image})`,
+                  }}
                 >
                   {index === 0 && (
                     <div className="sliderTextBoxArea">
                       {chatMessages1.map((message, chatIdx) => (
-                          <div key={chatIdx} className="ChatBox">
-                            <div className="chatImgName">
-                              <div className="ChatAvatar">
-                                <img src={message.userimg} alt="User Avatar" />
-                                {message.role !== "" && (
-                                  <img
-                                    style={{
-                                      marginLeft: "-8px",
-                                      marginBottom: "-2px",
-                                      width: "12px",
-                                      height: "12px",
-                                    }}
-                                    src={girlimg}
-                                    alt="User Avatar"
-                                  />
-                                )}
-                              </div>
-                              <div className="CharName">
-                                <h3>{message.name}</h3>
-                                <p>{message.role}</p>
-                              </div>
+                        <div key={chatIdx} className="ChatBox">
+                          <div className="chatImgName">
+                            <div className="ChatAvatar">
+                              <img src={message.userimg} alt="User Avatar" />
+                              {message.role !== "" && (
+                                <img
+                                  style={{
+                                    marginLeft: "-8px",
+                                    marginBottom: "-2px",
+                                    width: "12px",
+                                    height: "12px",
+                                  }}
+                                  src={girlimg}
+                                  alt="User Avatar"
+                                />
+                              )}
                             </div>
-                            <p className="ChatParagraph">{message.message}</p>
+                            <div className="CharName">
+                              <h3>{message.name}</h3>
+                              <p>{message.role}</p>
+                            </div>
                           </div>
+                          <p className="ChatParagraph">{message.message}</p>
+                        </div>
                       ))}
                     </div>
                   )}
                   {index === 1 && (
                     <div className="sliderTextBoxArea">
                       {chatMessages2.map((message, chatIdx) => (
-                          <div key={chatIdx} className="ChatBox">
-                            <div className="chatImgName">
-                              <div className="ChatAvatar">
-                                <img src={message.userimg} alt="User Avatar" />
-                                {message.role !== "" && (
-                                  <img
-                                    style={{
-                                      marginLeft: "-8px",
-                                      marginBottom: "-2px",
-                                      width: "12px",
-                                      height: "12px",
-                                    }}
-                                    src={userimg}
-                                    alt="User Avatar"
-                                  />
-                                )}
-                              </div>
-                              <div className="CharName">
-                                <h3>{message.name}</h3>
-                                <p>{message.role}</p>
-                              </div>
+                        <div key={chatIdx} className="ChatBox">
+                          <div className="chatImgName">
+                            <div className="ChatAvatar">
+                              <img src={message.userimg} alt="User Avatar" />
+                              {message.role !== "" && (
+                                <img
+                                  style={{
+                                    marginLeft: "-8px",
+                                    marginBottom: "-2px",
+                                    width: "12px",
+                                    height: "12px",
+                                  }}
+                                  src={userimg}
+                                  alt="User Avatar"
+                                />
+                              )}
                             </div>
-                            <p className="ChatParagraph">{message.message}</p>
+                            <div className="CharName">
+                              <h3>{message.name}</h3>
+                              <p>{message.role}</p>
+                            </div>
                           </div>
+                          <p className="ChatParagraph">{message.message}</p>
+                        </div>
                       ))}
                     </div>
                   )}

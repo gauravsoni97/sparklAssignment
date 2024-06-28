@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import img1 from "../../assets/vc1.jpg";
 import img2 from "../../assets/vc2.jpg";
 import img3 from "../../assets/vc3.jpg";
@@ -17,10 +16,8 @@ const VideoCall = () => {
   const [minutes, setMinutes] = useState(50);
   const [seconds, setSeconds] = useState(0);
 
-  const backgroundImageUrl = isClicked ? `url(${vcbg})` : "none";
-
   const handleClick = () => {
-    setIsClicked(true);
+    setIsClicked(!isClicked);
   };
 
   useEffect(() => {
@@ -38,11 +35,9 @@ const VideoCall = () => {
       }
     }, 1000);
 
-    // Cleanup function to clear interval on unmount
     return () => clearInterval(countdownInterval);
   }, [minutes, seconds]);
 
-  // Format the remaining time to display as MM:SS
   const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
   return (
@@ -117,56 +112,68 @@ const VideoCall = () => {
           </span>
         </div>
         {isVideoStarted && (
-          <div
-            className="VideoCallMainScreen"
-            style={{ backgroundImage: backgroundImageUrl }}
-          >
+          <Fade in={true} timeout={1000}>
             <div
-              className={`TeacherImgBox ${
-                isClicked ? "AfterStartTeacherImg" : ""
-              }`}
+              className="VideoCallMainScreen"
+              style={{ backgroundImage: `url(${vcbg})` }}
               onClick={handleClick}
             >
-              <img
-                src={teacherImg}
-                alt={"Teacher Img"}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius:".8rem",
-                }}
-              />
-            </div>
+              <div
+                className={`TeacherImgBox ${
+                  isClicked ? "AfterStartTeacherImg" : ""
+                }`}
+                style={
+                  isClicked ? { border: "3px solid white" } : { border: "none" }
+                }
+              >
+                <img
+                  src={teacherImg}
+                  alt={"Teacher Img"}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: ".8rem",
+                  }}
+                />
+              </div>
 
-            <div className={`StudentImgBox`}>
-              {studentImgs.map((imageUrl, index) => (
-                <div
-                  key={index}
-                  className={`StudentCard ${
-                    isClicked ? "AfterStartStudentImg" : ""
-                  }`}
-                >
-                  <img
-                    src={imageUrl}
-                    alt={`Student Image ${index}`}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "1rem",
-                    }}
-                  />
-                </div>
-              ))}
+              <div className={`StudentImgBox`}>
+                {studentImgs.map((imageUrl, index) => (
+                  <div
+                    key={index}
+                    className={`StudentCard ${
+                      isClicked ? "AfterStartStudentImg" : ""
+                    }`}
+                    style={
+                      isVideoStarted
+                        ? { border: "3px solid white" }
+                        : { border: "none" }
+                    }
+                  >
+                    <Fade in={true} timeout={400}>
+                      <img
+                        src={imageUrl}
+                        alt={`Student Image ${index}`}
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "1rem",
+                        }}
+                      />
+                    </Fade>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </Fade>
         )}
       </div>
     </div>

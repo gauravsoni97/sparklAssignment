@@ -56,10 +56,12 @@
 }
 
 .shiftText {
-  animation: shiftWord 7s infinite;
+  animation: shiftWord 6s infinite;
   padding: 0.4rem 1rem;
   border-radius: 1rem;
   width: max-content;
+  transform: translateY(-315%);
+
 }
 
 @keyframes shiftWord {
@@ -152,22 +154,22 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 1rem;
+  overflow: hidden;
 }
 
 .sliderTextBoxArea {
   position: absolute;
   bottom: 0;
-  right: 0rem;
+  right: 0;
+  padding-right: 0.5rem;
   overflow: hidden;
-  background: rgb(4, 0, 8);
-  background: linear-gradient(
-    0deg,
-    rgba(4, 0, 8, 0.9240546218487395) 15%,
-    rgba(31, 23, 10, 0.05) 100%
-  );
+
   border-radius: 1rem;
   width: 100%;
   height: max-content;
+  animation: animatechatBox 4s;
+  transform: translateY(100%);
+  animation-delay: .4s;
 }
 
 .ChatBox {
@@ -178,22 +180,21 @@
   margin-bottom: 0.3rem;
   border-radius: 0.8rem;
   padding: 1rem;
-  position: relative;
-  bottom: -50vh;
-  right: 0.3rem;
-  animation: animatechatBox 4s ease infinite;
-  animation-delay: 0.3s;
 }
-
 @keyframes animatechatBox {
-  30% {
-    bottom: -27.5vh;
+  0% {
+    transform: translateY(100%);
   }
-  60% {
-    bottom: -14vh;
+
+  30% {
+    transform: translateY(63%);
+  }
+
+  55% {
+    transform: translateY(30%);
   }
   100% {
-    bottom: 0vh;
+    transform: translateY(0%);
   }
 }
 
