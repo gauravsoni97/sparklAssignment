@@ -154,7 +154,6 @@ const VideoCall = () => {
                         : { border: "none" }
                     }
                   >
-                    <Fade in={true} timeout={400}>
                       <img
                         src={imageUrl}
                         alt={`Student Image ${index}`}
@@ -168,7 +167,6 @@ const VideoCall = () => {
                           borderRadius: "1rem",
                         }}
                       />
-                    </Fade>
                   </div>
                 ))}
               </div>
